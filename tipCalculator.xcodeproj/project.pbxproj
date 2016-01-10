@@ -14,7 +14,6 @@
 		28EAEF7C1C3E456900CDD016 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EAEF7B1C3E456900CDD016 /* TipViewController.swift */; };
 		28EAEF811C3E456900CDD016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28EAEF801C3E456900CDD016 /* Assets.xcassets */; };
 		28EAEF841C3E456900CDD016 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28EAEF821C3E456900CDD016 /* LaunchScreen.storyboard */; };
-		28EAEF8D1C3E76E800CDD016 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EAEF8C1C3E76E800CDD016 /* SettingsViewController.swift */; };
 		28EAEF8F1C3EE36200CDD016 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EAEF8E1C3EE36200CDD016 /* Bill.swift */; };
 		28EAEF971C3EE7CB00CDD016 /* tipCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EAEF961C3EE7CB00CDD016 /* tipCalculatorTests.swift */; };
 		28EAEFA51C3EE7D600CDD016 /* tipCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EAEFA41C3EE7D600CDD016 /* tipCalculatorUITests.swift */; };
@@ -47,7 +46,6 @@
 		28EAEF801C3E456900CDD016 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28EAEF831C3E456900CDD016 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28EAEF851C3E456900CDD016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		28EAEF8C1C3E76E800CDD016 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		28EAEF8E1C3EE36200CDD016 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		28EAEF941C3EE7CB00CDD016 /* tipCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tipCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28EAEF961C3EE7CB00CDD016 /* tipCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipCalculatorTests.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 			children = (
 				28EAEF8B1C3E769300CDD016 /* View Controllers */,
 				28EAEF791C3E456900CDD016 /* AppDelegate.swift */,
-				28EAEF8C1C3E76E800CDD016 /* SettingsViewController.swift */,
 				2872E7D21C3EF529000B5C9E /* Main.storyboard */,
 				2872E7D71C3FCBD9000B5C9E /* SettingsTableViewController.swift */,
 				283D76711C4247C900E09917 /* Constants.swift */,
@@ -281,7 +278,6 @@
 				2872E7D81C3FCBD9000B5C9E /* SettingsTableViewController.swift in Sources */,
 				28EAEF8F1C3EE36200CDD016 /* Bill.swift in Sources */,
 				28EAEF7A1C3E456900CDD016 /* AppDelegate.swift in Sources */,
-				28EAEF8D1C3E76E800CDD016 /* SettingsViewController.swift in Sources */,
 				283D76721C4247C900E09917 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
