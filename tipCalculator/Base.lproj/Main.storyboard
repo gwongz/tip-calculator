@@ -97,7 +97,7 @@
         <!--Settings Table View Controller-->
         <scene sceneID="qeh-BL-Jct">
             <objects>
-                <tableViewController id="vJW-ni-T0l" customClass="SettingsTableViewController" customModule="tipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="vJW-ni-T0l" customClass="SettingsTableViewController" customModule="tipCalculator" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="50" sectionHeaderHeight="18" sectionFooterHeight="18" id="Na5-2c-nYm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,7 +107,7 @@
                             <tableViewSection headerTitle="Tip Percentage" id="dBj-i4-Laj">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="Na1-tZ-ifd" customClass="SettingsTableViewCell" customModule="tipCalculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="113.5" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Na1-tZ-ifd" id="CsO-xs-tdM">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
@@ -137,7 +137,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="0Bk-Ne-ycH" customClass="SettingsTableViewCell" customModule="tipCalculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="99.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="163.5" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Bk-Ne-ycH" id="jY3-eg-HJC">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
@@ -163,7 +163,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="dH6-zD-uhv" customClass="SettingsTableViewCell" customModule="tipCalculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="149.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="213.5" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dH6-zD-uhv" id="gLA-X8-5oB">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
@@ -193,7 +193,7 @@
                             <tableViewSection headerTitle="DISPLAY" footerTitle="When this is turned on, the default percentage will be displayed when tip is calculated." id="ySp-6E-zCf">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="50" id="SaW-ry-7mL" customClass="SettingsTableViewCell" customModule="tipCalculator" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="249.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="313.5" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SaW-ry-7mL" id="o1W-zK-2FW">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>

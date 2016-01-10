@@ -16,7 +16,6 @@ class Bill {
     init(amount: Double, tipPercentage: String) {
         self.amount = amount
         self.tipPercentage = Double(tipPercentage)
-        
     }
     var tipAmount: Double {
         get {

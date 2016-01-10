@@ -19,8 +19,6 @@ class TipViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tipLabel: UILabel!
 
     @IBOutlet weak var tipPercentageLabel: UILabel!
-    @IBOutlet weak var tipControl: UISegmentedControl!
-    
  
     let defaults = NSUserDefaults.standardUserDefaults()
     let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.height
@@ -28,33 +26,26 @@ class TipViewController: UIViewController, UITextFieldDelegate {
     var keyboardHeight: CGFloat!
     var resultsDidShow: Bool = false
     
-    
   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print("View did load!!!!!!!")
         self.navigationController?.navigationBar.translucent = false
         self.billView.backgroundColor = UIColor.magentaColor()
-        
-        self.resultsView.backgroundColor = UIColor.magentaColor().colorWithAlphaComponent(0.7)
+        self.resultsView.backgroundColor = UIColor.magentaColor().colorWithAlphaComponent(0.8)
   
-
         self.billField.delegate = self
         self.updateTipPercentageLabel()
         self.renderView()
-
 }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        print("view will appear")
-      
+    
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("applicationWillEnterForeground:"), name: UIApplicationWillEnterForegroundNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("applicationDidEnterBackground:"), name: UIApplicationDidEnterBackgroundNotification, object: nil)
-        
+    
         self.billField.becomeFirstResponder()
         self.calculateBill()
     }
@@ -66,50 +57,40 @@ class TipViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        print("Bill view did appear")
         self.calculateBill()
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        print ("keyboard showign")
         if let userInfo = notification.userInfo {
-            if let keyboardSize =  (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
-                keyboardHeight = keyboardSize.height
-                // animate with stored value if animation has not happened yet
+            if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                self.keyboardHeight = keyboardSize.height
+                // show results with stored value if results not shown yet
                 if !self.resultsDidShow {
-                    print("The keyboard is ready and aniimation has not happened yet")
-                    
-                    // update bill field with stored amount
                     let billAmount = self.getStoredBillAmount()
                     self.billField.text = billAmount
-                    
+                    //                    let billAmount = self.billField.text!
                     if (billAmount.isEmpty) {
                         self.renderInputOnlyView()
                     } else {
                         self.renderResultsView()
-                        print("Sliding animation up")
                     }
                     
                 }
-        
-                
             }
         }
     }
-    
+
     func applicationWillEnterForeground(notification: NSNotification) {
         // only refresh if we've cleared out stored bill amount
         if (self.getStoredBillAmount().isEmpty) {
             self.renderView()
-            
+        } else {
+            self.billField.text = self.getStoredBillAmount()
         }
     }
     
     func applicationDidEnterBackground(notification: NSNotification) {
-        print("entered background so persisting")
         self.storeBillAmount()
-    }
-    func keyboardWillHide(notification: NSNotification) {
     }
     
     override func didReceiveMemoryWarning() {
@@ -130,7 +111,6 @@ class TipViewController: UIViewController, UITextFieldDelegate {
         if (self.getStoredBillAmount().isEmpty){
             self.renderInputOnlyView()
         }
-
     }
     
     func renderInputOnlyView() {
@@ -140,9 +120,7 @@ class TipViewController: UIViewController, UITextFieldDelegate {
         // position the textfield in the frame
         self.billField.center = CGPointMake(CGRectGetWidth(self.billView.bounds) / 2.0, CGRectGetHeight(self.billView.bounds) / 3)
         self.tipPercentageLabel.center.y = CGRectGetHeight(self.billView.bounds) / 3 + CGFloat(self.billField.frame.height)
-        
         self.tipPercentageLabel.hidden = true
-        // hide the tip amount
         self.resultsView.hidden = true
        }
     
@@ -151,14 +129,10 @@ class TipViewController: UIViewController, UITextFieldDelegate {
         self.tipPercentageLabel.text = percentage
         self.tipPercentageLabel.text = self.tipPercentageLabel.text! + "%"
         self.tipPercentageLabel.hidden = !self.defaults.boolForKey(Constants.defaultDisplayKey)
-        
-        
     }
    
     func calculateBill() {
         // render the view with latest values
-        print("User edited bill")
-    
         guard let billAmount = Double(self.billField.text!) else {
             self.renderInputOnlyView()
             self.resultsDidShow = false
@@ -184,18 +158,14 @@ class TipViewController: UIViewController, UITextFieldDelegate {
             let resultsViewHeight = visibleFrameHeight * 0.35
             self.resultsView.hidden = false
             
-            // create a new frame where the height is half the current screen
+            // create new frame where the height is half the current screen
             self.billView.frame = CGRectMake(0, 0, self.view.frame.width, animatedBillHeight)
             
             // move the center up but offset by status bar height
             let billFieldOffset = self.billView.frame.height / 2 + self.statusBarHeight
-        
             self.billField.center = CGPointMake(CGRectGetWidth(self.billView.frame) / 2, billFieldOffset)
             self.tipPercentageLabel.center.y -= self.billField.frame.height
-          
             self.resultsView.frame = CGRectMake(0, self.billView.bounds.height, self.view.frame.width, resultsViewHeight)
-         
-            
             self.resultsDidShow = true
         }, completion: nil)
     }

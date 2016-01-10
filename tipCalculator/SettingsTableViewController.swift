@@ -76,7 +76,6 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     
     func initializeSwitch() {
         let alwaysUseDefault = self.defaults.boolForKey(Constants.defaultDisplayKey)
-        print("default value \(alwaysUseDefault)")
         self.displaySwitch.setOn(alwaysUseDefault, animated: false)
     }
     
@@ -90,7 +89,6 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     
     func storePercentage(percentage: String, key: String) {
         self.defaults.setObject(percentage, forKey: key)
-        
     }
     
     

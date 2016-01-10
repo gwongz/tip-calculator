@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
+      
         let defaultPercentage: [String: String] = [
             Constants.defaultPercentageKey: "20",
             Constants.maximumPercentageKey: "30",
@@ -27,10 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         defaults.registerDefaults(defaultPercentage)
         defaults.registerDefaults(defaultDisplay)
-        print("The value of user default Percentage")
-        print(defaults.stringForKey(Constants.defaultPercentageKey))
-        print(defaults.boolForKey(Constants.defaultDisplayKey))
-
         return true
     }
 
@@ -42,27 +38,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        print("Application entered background")
-        print("Storing this time")
-  
         self.defaults.setObject(NSDate(), forKey: Constants.lastActiveKey)
-        let time = self.defaults.objectForKey(Constants.lastActiveKey)
-        print(time)
-      
-    
 
-    
-        
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-        print("Application will enter foreground")
         if let lastActive = self.defaults.objectForKey(Constants.lastActiveKey) {
             let timeInterval = lastActive.timeIntervalSinceNow
             let cutoffInSeconds = self.resetBillAmountInMinutes * 60
             if (abs(Int(timeInterval)) > cutoffInSeconds) {
-                print("A minute has passed")
                 self.defaults.setObject("", forKey: Constants.defaultBillAmountKey)
             }
         }
