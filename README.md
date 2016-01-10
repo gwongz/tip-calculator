@@ -2,7 +2,7 @@
 
 This is a Tip Calculator application for iOS submitted as the [pre-assignment](https://gist.github.com/timothy1ee/7747214) requirement for CodePath.
 
-Time spent: 8
+Time spent: 8 hours
 
 Completed:
 
@@ -15,6 +15,17 @@ Completed:
 
 ![Video Walkthrough](gif/tip-calc.gif)
 
-Note: to embed the gif file, just check your gif file into your repo and update the name of the file above.
+# Installation
+
+- Download [Xcode from the Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12), requires OS X 10.9.4+.
+
+- Clone this repo
+`$ git clone https://github.com/gwongz/tip-calculator.git`
+
+- Open the `tipCalculator.xcodeproj` project in XCode. 
+
+- To launch the app in the simulator, go to Project -> Run or hit Command-R. 
+
+Note: This app does not use auto layout and is designed for an iPhone 6. 
 
 GIF created with [LiceCap](https://github.com/lepht/licecap).

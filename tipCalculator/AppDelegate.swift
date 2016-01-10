@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let defaults = NSUserDefaults.standardUserDefaults()
-    let resetBillAmountInMinutes = 1
+    let resetBillAmountInMinutes = 10
     var window: UIWindow?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

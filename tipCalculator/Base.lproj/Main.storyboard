@@ -260,27 +260,5 @@
             </objects>
             <point key="canvasLocation" x="-1179" y="-506"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="aF1-sg-RQY">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oVE-pK-c2A" customClass="Settings" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="JW6-QU-1n2"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jqc-qh-fSC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="vJW-ni-T0l" kind="relationship" relationship="rootViewController" id="DNt-5J-jUl"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ktf-Df-pB7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="187" y="-1222"/>
-        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="5dH-YU-nq6"/>
-    </inferredMetricsTieBreakers>
 </document>
